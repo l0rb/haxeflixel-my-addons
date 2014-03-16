@@ -1,17 +1,23 @@
 package flixel.addons.sound;
 
 import flixel.FlxG;
-import flixel.text.FlxButton;
+import flixel.ui.FlxButton;
+import flash.display.BitmapData;
+
+@:bitmap("assets/images/mute.png") private class MuteButton extends BitmapData {}
+@:bitmap("assets/images/unmute.png") private class UnmuteButton extends BitmapData {}
 
 class MyMute extends FlxButton {
-   public var unmute:String;
-   public var mute:String;
-   public function new(X=-1,Y=-1,Mute="assets/images/mute.png",Unmute="assets/images/unmute.png") {
+   public var unmute:Dynamic;
+   public var mute:Dynamic;
+   public function new(X=-1,Y=-1,?Mute=null,?Unmute=null) {
       if(X==-1) { X= FlxG.width-50; }
       if(Y==-1) { Y= 10; }
       super(X,Y," ",toggle);
-      mute= Mute;
-      unmute= Unmute;
+      if(Mute==null) { mute= MuteButton; }
+      else { mute= Mute; }
+      if(Unmute==null) { unmute= UnmuteButton; }
+      else { unmute= Unmute; }
       make_graphic();
    }
    public function toggle() {
