@@ -10,9 +10,8 @@ import flash.display.BitmapData;
 class MyMute extends FlxButton {
    public var unmute:Dynamic;
    public var mute:Dynamic;
-   public function new(X=-1,Y=-1,?Mute=null,?Unmute=null) {
+   public function new(X=-1,Y=10,?Mute=null,?Unmute=null) {
       if(X==-1) { X= FlxG.width-50; }
-      if(Y==-1) { Y= 10; }
       super(X,Y," ",toggle);
       if(Mute==null) { mute= MuteButton; }
       else { mute= Mute; }
