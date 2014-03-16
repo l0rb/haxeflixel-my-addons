@@ -1,0 +1,11 @@
+{
+"name": "my-addons",
+"url" : "http://github.com/l0rb",
+"license": "GPL",
+"tags": ["game", "haxeflixel"],
+"description": "my-addons is a set of useful, additional classes for HaxeFlixel.",
+"version": "0.1",
+"releasenote": "starting out",
+"contributors": ["l0rb"],
+"dependencies": { "openfl": "", "flixel": "" }
+}
