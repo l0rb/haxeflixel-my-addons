@@ -8,8 +8,8 @@ class MyButton extends FlxButtonPlus {
       super(X,Y,Callback,Label,Width,Height);
       if(Label!=null) {
          var fontsize= round(Height/1.2-4);
-         textNormal.setFormat(null,fontsize,false);
-         textHighlight.setFormat(null,fontsize,false);
+         textNormal.setFormat(null,fontsize,null,0,false);
+         textHighlight.setFormat(null,fontsize,null,0,false);
       }
    }
 }
