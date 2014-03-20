@@ -44,5 +44,11 @@ class MySpeed extends FlxButton {
          loadGraphic(x3);
       }
    }
+   override public function destroy() {
+      FlxG.timeScale= base_time;
+      FlxG.updateFramerate= base_frame;
+      // leave it behind the way we got it
+      super.destroy();
+   }
 }
 
