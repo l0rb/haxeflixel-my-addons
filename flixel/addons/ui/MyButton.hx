@@ -14,6 +14,9 @@ class MyButton extends FlxButtonPlus {
          textHighlight= t;
       }
    }
+   public function is_lit() {
+      return (_status==FlxButtonPlus.HIGHLIGHT || _status==FlxButtonPlus.PRESSED);
+   }
    // because FlxButtonPlus is a group it adds it's x and y to all children if they are changed
    // this results in adding it twice if the list of children contains two pointers to the same object
    // the two methods below prevent that from happening to textNormal and textHighlight
