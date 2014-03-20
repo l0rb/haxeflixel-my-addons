@@ -1,13 +1,13 @@
-package flixel.addons.sound;
+package flixel.addons.util;
 
 import flixel.FlxG;
 import flixel.ui.FlxButton;
 import flash.display.BitmapData;
 import Math.round;
 
-@:bitmap("assets/images/x1.png") private class x1Button extends BitmapData {}
-@:bitmap("assets/images/x2.png") private class x2Button extends BitmapData {}
-@:bitmap("assets/images/x3.png") private class x3Button extends BitmapData {}
+@:bitmap("assets/images/x1.png") private class X1Button extends BitmapData {}
+@:bitmap("assets/images/x2.png") private class X2Button extends BitmapData {}
+@:bitmap("assets/images/x3.png") private class X3Button extends BitmapData {}
 
 class MySpeed extends FlxButton {
    public var x1:Dynamic;
@@ -21,9 +21,9 @@ class MySpeed extends FlxButton {
       super(X,Y," ",next);
       base_frame= FlxG.updateFramerate;
       base_time= FlxG.timeScale;
-      if(X1==null) { x1= x1Button; } else { x1= X1; }
-      if(X2==null) { x2= x2Button; } else { x2= X2; }
-      if(X3==null) { x3= x3Button; } else { x3= X3; }
+      if(X1==null) { x1= X1Button; } else { x1= X1; }
+      if(X2==null) { x2= X2Button; } else { x2= X2; }
+      if(X3==null) { x3= X3Button; } else { x3= X3; }
       make_graphic();
    }
    public function set_speed(s:Float=1) {
@@ -32,7 +32,7 @@ class MySpeed extends FlxButton {
    }
    public function next() {
       speed= (speed>=3) ? 1 : (speed+1);
-      set_speed(Std.float(speed));
+      set_speed(speed);
       make_graphic();
    }
    public function make_graphic() {
@@ -40,7 +40,7 @@ class MySpeed extends FlxButton {
          loadGraphic(x1);
       } else if(speed==2) {
          loadGraphic(x2);
-      } else if(speed==3) [
+      } else if(speed==3) {
          loadGraphic(x3);
       }
    }
