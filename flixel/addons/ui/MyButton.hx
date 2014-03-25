@@ -34,5 +34,16 @@ class MyButton extends FlxButtonPlus {
       }
       return Value;
    }
+   public function makeButtonGraphic(Normal:Dynamic,?Highlight:Dynamic=null) {
+      if(Std.is(Normal, String)) {
+         Normal= new FlxSprite(0,0,Normal);
+      }
+      if(Highlight==null) {
+         Highlight= Normal;
+      } else if(Std.is(Highlight, String)) {   
+         Highlight= new FlxSprite(0,0,Highlight);
+      }
+      loadButtonGraphic(Normal,Highlight);
+   }
 }
 
