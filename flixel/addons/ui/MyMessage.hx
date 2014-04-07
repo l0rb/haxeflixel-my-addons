@@ -25,7 +25,6 @@ class MyMessageState extends FlxSubState {
       if(_valign==VALIGN_TOP) _text.y= margin+padding;
       if(_valign==VALIGN_BOTTOM) _text.y= FlxG.height-_text.frameHeight-margin-padding;
       if(_valign==VALIGN_CENTER) _text.y= (FlxG.height-_text.frameHeight)/2+padding;
-      trace(_text,_text.text);
       _bg.y= _text.y-padding;
       _bg.makeGraphic(_text.frameWidth+2*padding,_text.frameHeight+2*padding,bgcolor,true);
    }
