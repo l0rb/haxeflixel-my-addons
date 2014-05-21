@@ -19,9 +19,7 @@ abstract Array3D<T>(Array<Array2D<T>>) {
       return this[key];
    }
    @:arrayAccess public inline function arrayWrite<T>(key:Int, value:Array2D<T>):Array2D<T> {
-        //Reflect.setField(this, key, value);
-        this[key]= value;
-        return value;
-    }
+      this[key]= value;
+      return value;
+   }
 }
-
